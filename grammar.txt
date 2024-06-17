@@ -1,0 +1,37 @@
+<program> ::= <function>
+
+<function> ::= 'int' 'main' '(' <params> ')' '{' <statements> <return_statement> '}'
+
+<params> ::= 'int' <identifier> (',' 'int' <identifier>)*
+           | ε
+
+<statements> ::= <statement>*
+               | ε
+
+<statement> ::= <declaration>
+              | <if_statement>
+              | <assignment>
+
+<declaration> ::= 'int' <identifier> ';'
+
+<if_statement> ::= 'if' '(' <condition> ')' '{' <statements> '}'
+
+<condition> ::= <identifier> <rel_op> <identifier>
+
+<rel_op> ::= '<'
+           | '>'
+
+<assignment> ::= <identifier> '=' <expression> ';'
+
+<expression> ::= <term> (('+' | '-') <term>)*
+
+<term> ::= <factor> (('*' | '/') <factor>)*
+
+<factor> ::= <integer>
+           | <identifier>
+           | '(' <expression> ')'
+
+<return_statement> ::= 'return' <expression> ';'
+
+<identifier> ::= [a-zA-Z_][a-zA-Z0-9_]*
+<integer> ::= [0-9]+
