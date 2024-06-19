@@ -7,7 +7,6 @@ lexer.py - Lexer/Scanner to tokenize the input string into different
 python_parser_icg.py - Parser implemented using the recursive descent parsing approach.
                         Tokens generated from the lexer are stored in token.json file.
                         The parser reads the json file and generates a parse tree.
-
                         Intermediate code generation generates Three address code from the parse tree output.
 
 parser_icg_expressions.py - works for expressions only such as 6 * 4 - 7 
